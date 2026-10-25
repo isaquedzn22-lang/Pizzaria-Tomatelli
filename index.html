@@ -1,394 +1,708 @@
 <!doctype html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Tomatelli Pizzaria — Itanhaém</title>
-  <meta name="description" content="Tomatelli Pizzaria em Itanhaém. Confira o cardápio, conheça nossas duas unidades e peça pelo WhatsApp.">
+  <meta name="description"
+    content="Tomatelli Pizzaria em Itanhaém. Confira o cardápio, conheça nossas duas unidades e peça online.">
   <meta name="theme-color" content="#070707" id="themeColor">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Work+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-<link rel="preload" as="image" href="assets/pizza-fundo.jpg">
+  <link rel="preload" as="image" href="assets/pizza-trem.webp" type="image/webp" fetchpriority="high">
 </head>
+
 <body>
-<!-- Reusable icon symbols -->
-<svg style="display:none" aria-hidden="true">
-  <defs>
-    <symbol id="icon-slice" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M12 3 L21 20 L3 20 Z"/>
-      <circle cx="12" cy="13" r="1.1" fill="currentColor" stroke="none"/>
-      <circle cx="9" cy="16.5" r="1" fill="currentColor" stroke="none"/>
-      <circle cx="15" cy="16" r="1" fill="currentColor" stroke="none"/>
-    </symbol>
-    <symbol id="icon-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M12 21s7-7.1 7-12a7 7 0 0 0-14 0c0 4.9 7 12 7 12Z"/>
-      <circle cx="12" cy="9" r="2.4"/>
-    </symbol>
-    <symbol id="icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="8.5"/>
-      <path d="M12 7.5V12l3 2"/>
-    </symbol>
-    <symbol id="icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M6.6 10.8c1.2 2.5 3.1 4.4 5.6 5.6l1.9-1.9c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V19.5c0 .6-.4 1-1 1C10.4 20.5 3.5 13.6 3.5 5.4c0-.6.4-1 1-1H7.1c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1L6.6 10.8Z"/>
-    </symbol>
-    <symbol id="icon-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M4 20c8 0 14-6 16-16C10 5.5 4 11 4 20Z"/>
-      <path d="M6 18C10 14 13 11 18 5"/>
-    </symbol>
-    <symbol id="icon-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M12 3s4 3.6 4 8a4 4 0 0 1-8 0c0-1 .4-1.8 1-2.5C9.3 10 9 11 9 12a3 3 0 0 0 6 0c0-3.2-2-5.4-3-9Z"/>
-      <path d="M8.5 14.5a5.5 5.5 0 0 0 11 0c0-2-.8-3.4-1.7-4.7"/>
-    </symbol>
-    <symbol id="icon-wheat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M12 21V6"/>
-      <path d="M12 8c-1.6 0-3-1.1-3-2.6 1.6 0 3 1.1 3 2.6Zm0 0c1.6 0 3-1.1 3-2.6-1.6 0-3 1.1-3 2.6Z"/>
-      <path d="M12 12c-1.6 0-3-1.1-3-2.6 1.6 0 3 1.1 3 2.6Zm0 0c1.6 0 3-1.1 3-2.6-1.6 0-3 1.1-3 2.6Z"/>
-      <path d="M12 16c-1.6 0-3-1.1-3-2.6 1.6 0 3 1.1 3 2.6Zm0 0c1.6 0 3-1.1 3-2.6-1.6 0-3 1.1-3 2.6Z"/>
-    </symbol>
-  </defs>
-</svg>
+  <!-- Reusable icon symbols -->
+  <svg style="display:none" aria-hidden="true">
+    <defs>
+      <symbol id="icon-slice" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3 L21 20 L3 20 Z" />
+        <circle cx="12" cy="13" r="1.1" fill="currentColor" stroke="none" />
+        <circle cx="9" cy="16.5" r="1" fill="currentColor" stroke="none" />
+        <circle cx="15" cy="16" r="1" fill="currentColor" stroke="none" />
+      </symbol>
+      <symbol id="icon-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 21s7-7.1 7-12a7 7 0 0 0-14 0c0 4.9 7 12 7 12Z" />
+        <circle cx="12" cy="9" r="2.4" />
+      </symbol>
+      <symbol id="icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+        stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="8.5" />
+        <path d="M12 7.5V12l3 2" />
+      </symbol>
+      <symbol id="icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path
+          d="M6.6 10.8c1.2 2.5 3.1 4.4 5.6 5.6l1.9-1.9c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V19.5c0 .6-.4 1-1 1C10.4 20.5 3.5 13.6 3.5 5.4c0-.6.4-1 1-1H7.1c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1L6.6 10.8Z" />
+      </symbol>
+      <symbol id="icon-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 20c8 0 14-6 16-16C10 5.5 4 11 4 20Z" />
+        <path d="M6 18C10 14 13 11 18 5" />
+      </symbol>
+      <symbol id="icon-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3s4 3.6 4 8a4 4 0 0 1-8 0c0-1 .4-1.8 1-2.5C9.3 10 9 11 9 12a3 3 0 0 0 6 0c0-3.2-2-5.4-3-9Z" />
+        <path d="M8.5 14.5a5.5 5.5 0 0 0 11 0c0-2-.8-3.4-1.7-4.7" />
+      </symbol>
+      <symbol id="icon-wheat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 21V6" />
+        <path d="M12 8c-1.6 0-3-1.1-3-2.6 1.6 0 3 1.1 3 2.6Zm0 0c1.6 0 3-1.1 3-2.6-1.6 0-3 1.1-3 2.6Z" />
+        <path d="M12 12c-1.6 0-3-1.1-3-2.6 1.6 0 3 1.1 3 2.6Zm0 0c1.6 0 3-1.1 3-2.6-1.6 0-3 1.1-3 2.6Z" />
+        <path d="M12 16c-1.6 0-3-1.1-3-2.6 1.6 0 3 1.1 3 2.6Zm0 0c1.6 0 3-1.1 3-2.6-1.6 0-3 1.1-3 2.6Z" />
+      </symbol>
+    </defs>
+  </svg>
 
-<header class="site-header" id="siteHeader">
-  <div class="container site-header__inner">
-    <a href="#top" class="brand" aria-label="Tomatelli Pizzaria"><img src="assets/logo-tomatelli.png" alt="Tomatelli Pizzaria e Esfiharia"></a>
-    <nav class="site-nav" aria-label="Navegação principal">
-      <a href="#cardapio">Cardápio</a>
-      <a href="#destaques">Destaques</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#localizacao">Localização</a>
-    </nav>
-    <div class="header-right">
-      <span class="phone-line"><svg><use href="#icon-phone"/></svg>(13) 98131-0808</span>
-      <a class="btn btn--solid" id="waHeaderBtn" href="#cardapio">Montar pedido</a>
-      <button class="hamburger" id="hamburgerBtn" aria-expanded="false" aria-controls="mobileNav" aria-label="Abrir menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-</header>
-
-<div class="mobile-nav" id="mobileNav">
-  <div class="mobile-nav__top">
-    <span class="brand"><img src="assets/logo-tomatelli.png" alt="Tomatelli Pizzaria e Esfiharia"></span>
-    <button class="hamburger" id="hamburgerCloseBtn" aria-expanded="true" aria-controls="mobileNav" aria-label="Fechar menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-  <nav class="mobile-nav__links" aria-label="Navegação (menu móvel)">
-    <a href="#cardapio" data-close>Cardápio</a>
-    <a href="#destaques" data-close>Destaques</a>
-    <a href="#sobre" data-close>Sobre</a>
-    <a href="#localizacao" data-close>Localização</a>
-  </nav>
-  <div class="mobile-nav__foot">
-    <span class="phone-line"><svg><use href="#icon-phone"/></svg>(13) 98131-0808</span>
-    <a class="btn btn--solid" id="waMobileBtn" href="#cardapio" data-close>Montar pedido</a>
-  </div>
-</div>
-
-<main id="top">
-
-  <!-- HERO -->
-  <section class="hero container">
-    <div class="hero__grid">
-      <div>
-        <p class="hero__kicker">Duas unidades em Itanhaém</p>
-        <h1>A pizza que faz Itanhaém ficar de portas abertas até meia-noite.</h1>
-        <p class="hero__sub">Molho de tomate feito em casa, massa que passou por dezenas de testes até chegar no ponto e recheio sem economia — a receita que a Tomatelli não abre mão.</p>
-        <div class="hero__actions">
-          <a class="btn btn--solid" id="waHeroBtn" href="#cardapio">Montar pedido</a>
-          <a class="btn btn--ghost" href="#cardapio">Ver cardápio</a>
-        </div>
-        <ul class="hero__meta">
-          <li><svg><use href="#icon-clock"/></svg>Terça a domingo, das 18h à meia-noite</li>
-          <li><svg><use href="#icon-pin"/></svg>Estrada Gentil Peres, 338 — Jardim Umuarama</li>
-        </ul>
-      </div>
-      <div class="hero__art">
-        <div class="hero__art-backdrop"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- COMO PEDIR -->
-  <section class="section section--soft">
-    <div class="container">
-      <div class="section-head">
-        <h2>Do pedido ao primeiro pedaço.</h2>
-        <p>Sem aplicativo, sem complicação — o pedido sai direto pelo WhatsApp.</p>
-      </div>
-      <div class="steps">
-        <div class="step">
-          <div class="step__num">1</div>
-          <h3>Escolha os sabores</h3>
-          <p>Veja o cardápio completo logo abaixo e separe os sabores — dá para misturar mais de um na mesma pizza.</p>
-        </div>
-        <div class="step">
-          <div class="step__num">2</div>
-          <h3>Chame no WhatsApp</h3>
-          <p>Envie o pedido pelo número (13) 98131-0808 e confirme endereço e forma de pagamento.</p>
-        </div>
-        <div class="step">
-          <div class="step__num">3</div>
-          <h3>Receba quentinha</h3>
-          <p>A pizza sai do forno direto para a entrega — sem escalas, sem esfriar no caminho.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DESTAQUES -->
-  <section class="section" id="destaques">
-    <div class="container">
-      <div class="section-head">
-        <h2>Destaques da casa</h2>
-        <p>Os pedidos que fazem os clientes voltarem — e chamarem os amigos.</p>
-      </div>
-      <div class="destaques__grid">
-        <div class="destaque destaque--lg">
-          <h3>Pizza Trem</h3>
-          <p>Quase um metro de comprimento e até 4 sabores na mesma pizza. Feita para dividir com a família inteira — ou com um grupo grande de amigos.</p>
-        </div>
-        <div class="destaque destaque--sm">
-          <h3>Pizza quadrada</h3>
-          <p>Corte diferente, recheio igualmente farto — para quem quer variar o formato sem abrir mão do sabor de sempre.</p>
-        </div>
-        <div class="destaque destaque--sm">
-          <h3>Borda de requeijão</h3>
-          <p>Uma cortesia da casa: peça a borda recheada e ela vem sem custo extra, do jeito que os clientes mais pedem.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CARDÁPIO -->
-  <section class="section section--soft" id="cardapio">
-    <div class="container">
-      <div class="section-head">
-        <h2>Cardápio</h2>
-        <p>Preços de referência para pizza grande e média — confirme os valores atualizados na hora do pedido.</p>
-      </div>
-
-      <div class="menu-tabs" role="tablist" aria-label="Categorias do cardápio">
-        <button class="menu-tab is-active" role="tab" aria-selected="true" data-tab="tradicionais">Tradicionais</button>
-        <button class="menu-tab" role="tab" aria-selected="false" data-tab="especiais">Especiais da casa</button>
-        <button class="menu-tab" role="tab" aria-selected="false" data-tab="doces">Doces</button>
-        <button class="menu-tab" role="tab" aria-selected="false" data-tab="bebidas">Bebidas</button>
-      </div>
-
-      <div class="menu-panels">
-
-        <div class="menu-panel is-active" data-panel="tradicionais" role="tabpanel">
-          <div class="menu-legend"><span>Média (6 fatias)</span><span>Grande (10 fatias)</span></div>
-          <ul class="menu-list">
-            <li class="menu-item"><div class="menu-item__row"><h4>Marguerita</h4><div class="menu-item__price"><span>R$ 46</span><b>R$ 58</b></div></div><p>Molho de tomate artesanal, mussarela, tomate em rodelas, manjericão fresco e orégano.</p></li>
-            <li class="menu-item"><div class="menu-item__row"><h4>Calabresa</h4><div class="menu-item__price"><span>R$ 48</span><b>R$ 61</b></div></div><p>Calabresa fatiada, cebola roxa, azeitona e orégano.</p></li>
-            <li class="menu-item"><div class="menu-item__row"><h4>Mussarela</h4><div class="menu-item__price"><span>R$ 44</span><b>R$ 55</b></div></div><p>Camada generosa de queijo mussarela e orégano.</p></li>
-            <li class="menu-item"><div class="menu-item__row"><h4>Portuguesa</h4><div class="menu-item__price"><span>R$ 52</span><b>R$ 66</b></div></div><p>Presunto, ovo, cebola, azeitona e ervilha.</p></li>
-            <li class="menu-item"><div class="menu-item__row"><h4>Frango com catupiry</h4><div class="menu-item__price"><span>R$ 54</span><b>R$ 68</b></div></div><p>Frango desfiado temperado com catupiry cremoso.</p></li>
-            <li class="menu-item"><div class="menu-item__row"><h4>Atum</h4><div class="menu-item__price"><span>R$ 53</span><b>R$ 67</b></div></div><p>Atum, cebola roxa, azeitona e orégano.</p></li>
-            <li class="menu-item"><div class="menu-item__row"><h4>Milho verde com catupiry</h4><div class="menu-item__price"><span>R$ 47</span><b>R$ 60</b></div></div><p>Milho verde, catupiry cremoso e orégano.</p></li>
-            <li class="menu-item"><div class="menu-item__row"><h4>Escarola</h4><div class="menu-item__price"><span>R$ 50</span><b>R$ 63</b></div></div><p>Escarola refogada com alho, com opção de bacon.</p></li>
-            <li class="menu-item"><div class="menu-item__row"><h4>Napolitana</h4><div class="menu-item__price"><span>R$ 52</span><b>R$ 65</b></div></div><p>Mussarela, tomate, parmesão e manjericão fresco.</p></li>
-            <li class="menu-item"><div class="menu-item__row"><h4>Americana</h4><div class="menu-item__price"><span>R$ 52</span><b>R$ 65</b></div></div><p>Presunto, milho, ervilha e catupiry.</p></li>
-          </ul>
-        </div>
-
-        <div class="menu-panel" data-panel="especiais" role="tabpanel" hidden>
-          <div class="menu-legend"><span>Média (6 fatias)</span><span>Grande (10 fatias)</span></div>
-          <ul class="menu-list">
-            <li class="menu-item"><div class="menu-item__row"><h4>Tomatelli (especial da casa)</h4><div class="menu-item__price"><span>R$ 62</span><b>R$ 79</b></div></div><p>Mussarela de búfala, tomate seco, rúcula e lascas de parmesão.</p></li>
-            <li class="menu-item"><div class="menu-item__row"><h4>Lombinho com catupiry</h4><div class="menu-item__price"><span>R$ 56</span><b>R$ 70</b></div></div><p>Lombo suíno fatiado, catupiry cremoso e orégano.</p></li>
-            <li class="menu-item"><div class="menu-item__row"><h4>Camarão especial</h4><div class="menu-item__price"><span>R$ 68</span><b>R$ 86</b></div></div><p>Camarões refogados, catupiry e cebolinha fresca.</p></li>
-            <li class="menu-item"><div class="menu-item__row"><h4>Palmito com catupiry</h4><div class="menu-item__price"><span>R$ 56</span><b>R$ 70</b></div></div><p>Palmito, catupiry cremoso e azeitona preta.</p></li>
-            <li class="menu-item"><div class="menu-item__row"><h4>Chester com cheddar</h4><div class="menu-item__price"><span>R$ 58</span><b>R$ 73</b></div></div><p>Chester desfiado, molho cheddar e orégano.</p></li>
-            <li class="menu-item"><div class="menu-item__row"><h4>À moda do chefe</h4><div class="menu-item__price"><span>R$ 62</span><b>R$ 78</b></div></div><p>Carne seca desfiada, requeijão e cebola caramelizada.</p></li>
-            <li class="menu-item"><div class="menu-item__row"><h4>Quatro queijos</h4><div class="menu-item__price"><span>R$ 58</span><b>R$ 74</b></div></div><p>Mussarela, provolone, parmesão e gorgonzola.</p></li>
-            <li class="menu-item"><div class="menu-item__row"><h4>Siciliana</h4><div class="menu-item__price"><span>R$ 54</span><b>R$ 68</b></div></div><p>Calabresa, pimenta biquinho, cebola roxa e azeitona.</p></li>
-            <li class="menu-item"><div class="menu-item__row"><h4>Romanesca</h4><div class="menu-item__price"><span>R$ 52</span><b>R$ 66</b></div></div><p>Presunto, ovo, azeitona e alho frito.</p></li>
-            <li class="menu-item"><div class="menu-item__row"><h4>Toscana</h4><div class="menu-item__price"><span>R$ 54</span><b>R$ 68</b></div></div><p>Linguiça toscana, pimentão, cebola e orégano.</p></li>
-          </ul>
-        </div>
-
-        <div class="menu-panel" data-panel="doces" role="tabpanel" hidden>
-          <div class="menu-legend"><span>Média (6 fatias)</span><span>Grande (10 fatias)</span></div>
-          <ul class="menu-list">
-            <li class="menu-item"><div class="menu-item__row"><h4>Chocolate ao leite</h4><div class="menu-item__price"><span>R$ 46</span><b>R$ 58</b></div></div><p>Cobertura generosa de chocolate ao leite derretido.</p></li>
-            <li class="menu-item"><div class="menu-item__row"><h4>Brigadeiro</h4><div class="menu-item__price"><span>R$ 48</span><b>R$ 60</b></div></div><p>Chocolate cremoso com granulado.</p></li>
-            <li class="menu-item"><div class="menu-item__row"><h4>Romeu e Julieta</h4><div class="menu-item__price"><span>R$ 46</span><b>R$ 58</b></div></div><p>Goiabada derretida com mussarela.</p></li>
-            <li class="menu-item"><div class="menu-item__row"><h4>Prestígio</h4><div class="menu-item__price"><span>R$ 50</span><b>R$ 62</b></div></div><p>Chocolate ao leite com coco ralado.</p></li>
-            <li class="menu-item"><div class="menu-item__row"><h4>Ovomaltine</h4><div class="menu-item__price"><span>R$ 52</span><b>R$ 65</b></div></div><p>Chocolate coberto com Ovomaltine crocante.</p></li>
-            <li class="menu-item"><div class="menu-item__row"><h4>Confete</h4><div class="menu-item__price"><span>R$ 50</span><b>R$ 63</b></div></div><p>Chocolate branco com confetes coloridos.</p></li>
-            <li class="menu-item"><div class="menu-item__row"><h4>Kit Kat</h4><div class="menu-item__price"><span>R$ 54</span><b>R$ 68</b></div></div><p>Chocolate ao leite com pedaços de Kit Kat.</p></li>
-          </ul>
-        </div>
-
-        <div class="menu-panel" data-panel="bebidas" role="tabpanel" hidden>
-          <ul class="menu-list">
-            <li class="menu-item menu-item--single"><div class="menu-item__row"><h4>Água mineral 500ml</h4><div class="menu-item__price"><b>R$ 6</b></div></div></li>
-            <li class="menu-item menu-item--single"><div class="menu-item__row"><h4>Água com gás 500ml</h4><div class="menu-item__price"><b>R$ 7</b></div></div></li>
-            <li class="menu-item menu-item--single"><div class="menu-item__row"><h4>Coca-Cola lata 350ml</h4><div class="menu-item__price"><b>R$ 8</b></div></div></li>
-            <li class="menu-item menu-item--single"><div class="menu-item__row"><h4>Coca-Cola sem açúcar lata</h4><div class="menu-item__price"><b>R$ 8</b></div></div></li>
-            <li class="menu-item menu-item--single"><div class="menu-item__row"><h4>Coca-Cola PET 2L</h4><div class="menu-item__price"><b>R$ 16</b></div></div></li>
-            <li class="menu-item menu-item--single"><div class="menu-item__row"><h4>Guaraná Antarctica lata</h4><div class="menu-item__price"><b>R$ 7</b></div></div></li>
-            <li class="menu-item menu-item--single"><div class="menu-item__row"><h4>Fanta laranja / uva lata</h4><div class="menu-item__price"><b>R$ 7</b></div></div></li>
-            <li class="menu-item menu-item--single"><div class="menu-item__row"><h4>Guaraviton</h4><div class="menu-item__price"><b>R$ 9</b></div></div></li>
-            <li class="menu-item menu-item--single"><div class="menu-item__row"><h4>Suco de açaí 500ml</h4><div class="menu-item__price"><b>R$ 14</b></div></div></li>
-            <li class="menu-item menu-item--single"><div class="menu-item__row"><h4>Skol lata 350ml</h4><div class="menu-item__price"><b>R$ 7</b></div></div></li>
-            <li class="menu-item menu-item--single"><div class="menu-item__row"><h4>Heineken long neck</h4><div class="menu-item__price"><b>R$ 12</b></div></div></li>
-            <li class="menu-item menu-item--single"><div class="menu-item__row"><h4>Corona long neck</h4><div class="menu-item__price"><b>R$ 13</b></div></div></li>
-            <li class="menu-item menu-item--single"><div class="menu-item__row"><h4>Stella Artois long neck</h4><div class="menu-item__price"><b>R$ 12</b></div></div></li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- SOBRE -->
-  <section class="section" id="sobre">
-    <div class="container sobre__grid">
-      <div class="sobre__text">
-        <div class="section-head" style="margin-bottom:1.2rem;">
-          <h2>Molho que não sai de receita de caderno.</h2>
-        </div>
-        <p>O molho de tomate é feito em casa — nada de industrializado. A massa passou por dezenas de testes até chegar num ponto leve e crocante ao mesmo tempo, e o recheio sobe generoso, sem economizar.</p>
-        <p>A Tomatelli está em dois pontos de Itanhaém, facilitando o pedido, a retirada e a entrega. Em qualquer unidade, a proposta é a mesma: pizza bem feita, direto do forno para a mesa.</p>
-      </div>
-      <div class="sobre__points">
-        <div class="sobre__point">
-          <svg><use href="#icon-flame"/></svg>
-          <div><h4>Forno a lenha</h4><p>Assada em fogo direto, do jeito tradicional — sem atalho.</p></div>
-        </div>
-        <div class="sobre__point">
-          <svg><use href="#icon-wheat"/></svg>
-          <div><h4>Massa testada</h4><p>Desenvolvida ao longo de muitos testes até ficar no ponto certo.</p></div>
-        </div>
-        <div class="sobre__point">
-          <svg><use href="#icon-leaf"/></svg>
-          <div><h4>Recheio sem economia</h4><p>Ingredientes de qualidade e em quantidade generosa em cada fatia.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONFIANÇA -->
-  <section class="section section--soft">
-    <div class="container">
-      <div class="stats">
-        <div class="stat"><b>+12 mil</b><span>seguidores acompanham a Tomatelli no Instagram</span></div>
-        <div class="stat"><b>Eleita a melhor</b><span>pizzaria de Itanhaém, segundo a própria comunidade que segue a página</span></div>
-        <div class="stat"><b>Borda cortesia</b><span>a borda recheada com requeijão é oferecida sem custo extra</span></div>
-        <div class="stat stat--review"><b>Nota alta</b><span>no Google, com milhares de avaliações de clientes</span><a class="btn btn--ghost review-link" href="https://www.google.com/maps/search/?api=1&amp;query=Tomatelli+Pizzaria+Estrada+Gentil+Peres+338+Itanhaem+SP" target="_blank" rel="noopener noreferrer">Avaliar no Google Maps</a></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LOCALIZAÇÃO -->
-  <section class="section location-section" id="localizacao">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Itanhaém</span>
-        <h2>Duas unidades. A mesma Tomatelli.</h2>
-        <p>Escolha a unidade mais conveniente para você. Os pedidos continuam pelo WhatsApp.</p>
-      </div>
-
-      <div class="locations-grid">
-        <article class="location-card glass-card">
-          <div class="location-card__top">
-            <span class="location-badge">Unidade 01</span>
-            <svg aria-hidden="true"><use href="#icon-pin"/></svg>
-          </div>
-          <h3>Jardim Umuarama</h3>
-          <p>Estrada Gentil Peres, 338 — Jardim Umuarama, Itanhaém — SP</p>
-          <div class="location-card__meta">
-            <span><svg><use href="#icon-clock"/></svg>Terça a domingo, 18h à meia-noite</span>
-            <span><svg><use href="#icon-phone"/></svg>(13) 98131-0808</span>
-          </div>
-          <div class="local__actions">
-            <a class="btn btn--solid" href="#" id="waUnit1Btn" target="_blank" rel="noopener">Pedir nesta unidade</a>
-            <a class="btn btn--ghost" href="#" id="mapsUnit1Btn" target="_blank" rel="noopener">Ver no Maps</a>
-          </div>
-        </article>
-
-        <article class="location-card glass-card">
-          <div class="location-card__top">
-            <span class="location-badge">Unidade 02</span>
-            <svg aria-hidden="true"><use href="#icon-pin"/></svg>
-          </div>
-          <h3>Belas Artes</h3>
-          <p>Avenida Harry Forssell, 1001 — Belas Artes, Itanhaém — SP</p>
-          <div class="location-card__meta">
-            <span><svg><use href="#icon-clock"/></svg>Terça a domingo, 18h à meia-noite</span>
-            <span><svg><use href="#icon-phone"/></svg>(13) 98131-0808</span>
-          </div>
-          <div class="local__actions">
-            <a class="btn btn--solid" href="#" id="waUnit2Btn" target="_blank" rel="noopener">Pedir nesta unidade</a>
-            <a class="btn btn--ghost" href="#" id="mapsUnit2Btn" target="_blank" rel="noopener">Ver no Maps</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  <div class="container footer__grid">
-    <div>
-      <div class="footer__brand"><img src="assets/logo-tomatelli.png" alt="Tomatelli Pizzaria e Esfiharia"></div>
-      <p class="footer__tag">Pizza no forno a lenha, massa artesanal e duas unidades em Itanhaém.</p>
-    </div>
-    <div>
-      <h5>Navegação</h5>
-      <div class="footer__links">
+  <header class="site-header" id="siteHeader">
+    <div class="container site-header__inner">
+      <a href="#top" class="brand" aria-label="Tomatelli Pizzaria">
+        <picture>
+          <source srcset="assets/logo-tomatelli.webp" type="image/webp"><img src="assets/logo-tomatelli.png"
+            alt="Tomatelli Pizzaria e Esfiharia" decoding="async" fetchpriority="high">
+        </picture>
+      </a>
+      <nav class="site-nav" aria-label="Navegação principal">
         <a href="#cardapio">Cardápio</a>
         <a href="#destaques">Destaques</a>
         <a href="#sobre">Sobre</a>
         <a href="#localizacao">Localização</a>
+        <a href="#avaliacoes">Avaliações</a>
+      </nav>
+      <div class="header-right">
+        <a class="phone-line instagram-link" href="https://www.instagram.com/tomatellipizzaria/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Tomatelli"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>@tomatellipizzaria</a>
+        <a class="btn btn--solid" id="waHeaderBtn" href="https://tomatellipizzaria.wabiz.delivery/" target="_blank" rel="noopener noreferrer">Montar pedido</a>
+        <button class="hamburger" id="hamburgerBtn" aria-expanded="false" aria-controls="mobileNav"
+          aria-label="Abrir menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
-    <div>
-      <h5>Contato</h5>
-      <div class="footer__links">
-        <a href="#" id="waFooterBtn" target="_blank" rel="noopener">WhatsApp: (13) 98131-0808</a>
-        <a href="https://www.instagram.com/tomatellipizzaria/" target="_blank" rel="noopener">Instagram @tomatellipizzaria</a>
-        <a href="https://www.facebook.com/tomatellii/" target="_blank" rel="noopener">Facebook</a>
-      </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav__top">
+      <span class="brand">
+        <picture>
+          <source srcset="assets/logo-tomatelli.webp" type="image/webp"><img src="assets/logo-tomatelli.png"
+            alt="Tomatelli Pizzaria e Esfiharia" decoding="async">
+        </picture>
+      </span>
+      <button class="hamburger" id="hamburgerCloseBtn" aria-expanded="true" aria-controls="mobileNav"
+        aria-label="Fechar menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="mobile-nav__links" aria-label="Navegação (menu móvel)">
+      <a href="#cardapio" data-close>Cardápio</a>
+      <a href="#destaques" data-close>Destaques</a>
+      <a href="#sobre" data-close>Sobre</a>
+      <a href="#localizacao" data-close>Localização</a>
+      <a href="#avaliacoes" data-close>Avaliações</a>
+    </nav>
+    <div class="mobile-nav__foot">
+      <a class="phone-line instagram-link" href="https://www.instagram.com/tomatellipizzaria/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Tomatelli"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>@tomatellipizzaria</a>
+      <a class="btn btn--solid" id="waMobileBtn" href="https://tomatellipizzaria.wabiz.delivery/" target="_blank" rel="noopener noreferrer" data-close>Montar pedido</a>
     </div>
   </div>
-  <div class="container footer__bottom">
-    <span>© <span id="year"></span> Tomatelli Pizzaria — Itanhaém, SP</span>
-    <span>Cardápio e preços de referência; confirme os valores atualizados ao pedir.</span>
-  </div>
-</footer>
 
-<div class="floating-cta" id="floatingCta">
-  <button class="btn btn--solid cart-open-btn" id="openCartBtn" type="button" aria-haspopup="dialog">Meu pedido <span id="cartCount">0</span></button>
-</div>
+  <main id="top">
 
-<dialog class="cart-dialog" id="cartDialog" aria-labelledby="cartTitle">
-  <div class="cart-dialog__header">
-    <div><span class="eyebrow">Seu pedido</span><h2 id="cartTitle">Carrinho</h2></div>
-    <button class="cart-close" id="closeCartBtn" type="button" aria-label="Fechar carrinho">Fechar</button>
-  </div>
-  <div class="cart-dialog__body">
-    <div class="cart-empty" id="cartEmpty">Seu carrinho está vazio. Escolha os sabores no cardápio.</div>
-    <ul class="cart-items" id="cartItems" aria-live="polite"></ul>
-    <div class="cart-total" id="cartTotalRow" hidden><span>Total estimado</span><strong id="cartTotal">R$ 0,00</strong></div>
-    <form class="cart-checkout" id="checkoutForm">
-      <label>Seu nome<input name="customer" autocomplete="name" required maxlength="80" placeholder="Como podemos chamar você?"></label>
-      <label>Unidade<select name="unit" required><option value="">Selecione a unidade</option><option>Jardim Umuarama</option><option>Belas Artes</option></select></label>
-      <label>Receber pedido<select name="service" id="serviceType" required><option value="">Entrega ou retirada?</option><option value="Entrega">Entrega</option><option value="Retirada">Retirada</option></select></label>
-      <label id="addressField" hidden>Endereço de entrega<input name="address" autocomplete="street-address" maxlength="180" placeholder="Rua, número e bairro"></label>
-      <label>Observação (opcional)<textarea name="notes" rows="2" maxlength="240" placeholder="Ex.: tirar cebola"></textarea></label>
-      <button class="btn btn--solid cart-checkout__submit" id="checkoutBtn" type="submit" disabled>Enviar pedido pelo WhatsApp</button>
-      <p class="cart-checkout__note">O pedido será enviado para confirmação da pizzaria. O pagamento é combinado pelo WhatsApp.</p>
-    </form>
-  </div>
-</dialog>
-<script src="js/script.js" defer></script>
+    <!-- HERO -->
+    <section class="hero container">
+      <div class="hero__grid">
+        <div>
+          <p class="hero__kicker">Duas unidades em Itanhaém</p>
+          <h1>Em Itanhaém, Pizza&nbsp;Trem! Só a Tomatelli tem.</h1>
+          <p class="hero__sub">Massa que passou por dezenas de testes até chegar no ponto e recheio sem economia — a
+            receita que a Tomatelli não abre mão.</p>
+          <div class="hero__actions">
+            <a class="btn btn--solid" id="waHeroBtn" href="https://tomatellipizzaria.wabiz.delivery/" target="_blank" rel="noopener noreferrer">Montar pedido</a>
+            <a class="btn btn--ghost" href="#cardapio">Ver cardápio</a>
+          </div>
+          <ul class="hero__meta">
+            <li><svg>
+                <use href="#icon-clock" />
+              </svg>Terça a domingo, das 18h à meia-noite</li>
+            <li><svg>
+                <use href="#icon-pin" />
+              </svg>Estrada Gentil Peres, 338 — Jardim Umuarama</li>
+          </ul>
+        </div>
+        <div class="hero__art">
+          <div class="hero__art-backdrop"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO PEDIR -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section-head">
+          <h2>Do pedido ao primeiro pedaço.</h2>
+          <p>Acesse o sistema de delivery, escolha seus sabores e conclua o pedido online.</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step__num">1</div>
+            <h3>Confira o cardápio</h3>
+            <p>Veja as opções e escolha seus sabores diretamente no sistema de pedidos.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step__num">2</div>
+            <h3>Finalize o pedido online</h3>
+            <p>Informe a unidade, escolha entrega ou retirada e conclua o pedido pela plataforma.</p>
+          </div>
+          <div class="step">
+            <div class="step__num">3</div>
+            <h3>Receba quentinha</h3>
+            <p>A pizza sai do forno direto para a entrega — sem escalas, sem esfriar no caminho.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESTAQUES -->
+    <section class="section" id="destaques">
+      <div class="container">
+        <div class="section-head">
+          <h2>Destaques da casa</h2>
+          <p>Os pedidos que fazem os clientes voltarem — e chamarem os amigos.</p>
+        </div>
+        <div class="destaques__grid">
+          <div class="destaque destaque--lg">
+            <h3>Pizza Trem</h3>
+            <p>Quase um metro de comprimento e até 4 sabores na mesma pizza. Feita para dividir com a família inteira —
+              ou com um grupo grande de amigos.</p>
+          </div>
+          <div class="destaque destaque--sm">
+            <h3>Pizza quadrada</h3>
+            <p>Corte diferente, recheio igualmente farto — para quem quer variar o formato sem abrir mão do sabor de
+              sempre.</p>
+          </div>
+          <div class="destaque destaque--sm">
+            <h3>Borda de requeijão</h3>
+            <p>Uma cortesia da casa: peça a borda recheada e ela vem sem custo extra, do jeito que os clientes mais
+              pedem.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARDÁPIO -->
+    <section class="section section--soft" id="cardapio">
+      <div class="container">
+        <div class="section-head">
+          <h2>Cardápio</h2>
+          <p>Preços de referência para pizza grande e média — confirme os valores atualizados na hora do pedido.</p>
+        </div>
+
+        <div class="menu-tabs" role="tablist" aria-label="Categorias do cardápio">
+          <button class="menu-tab is-active" role="tab" aria-selected="true"
+            data-tab="tradicionais">Tradicionais</button>
+          <button class="menu-tab" role="tab" aria-selected="false" data-tab="especiais">Especiais da casa</button>
+          <button class="menu-tab" role="tab" aria-selected="false" data-tab="doces">Doces</button>
+          <button class="menu-tab" role="tab" aria-selected="false" data-tab="bebidas">Bebidas</button>
+        </div>
+
+        <div class="menu-panels">
+
+          <div class="menu-panel is-active" data-panel="tradicionais" role="tabpanel">
+            <div class="menu-legend"><span>Média (6 fatias)</span><span>Grande (10 fatias)</span></div>
+            <ul class="menu-list">
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <h4>Marguerita</h4>
+                  <div class="menu-item__price"><span>R$ 46</span><b>R$ 58</b></div>
+                </div>
+                <p>Molho de tomate artesanal, mussarela, tomate em rodelas, manjericão fresco e orégano.</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <h4>Calabresa</h4>
+                  <div class="menu-item__price"><span>R$ 48</span><b>R$ 61</b></div>
+                </div>
+                <p>Calabresa fatiada, cebola roxa, azeitona e orégano.</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <h4>Mussarela</h4>
+                  <div class="menu-item__price"><span>R$ 44</span><b>R$ 55</b></div>
+                </div>
+                <p>Camada generosa de queijo mussarela e orégano.</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <h4>Portuguesa</h4>
+                  <div class="menu-item__price"><span>R$ 52</span><b>R$ 66</b></div>
+                </div>
+                <p>Presunto, ovo, cebola, azeitona e ervilha.</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <h4>Frango com catupiry</h4>
+                  <div class="menu-item__price"><span>R$ 54</span><b>R$ 68</b></div>
+                </div>
+                <p>Frango desfiado temperado com catupiry cremoso.</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <h4>Atum</h4>
+                  <div class="menu-item__price"><span>R$ 53</span><b>R$ 67</b></div>
+                </div>
+                <p>Atum, cebola roxa, azeitona e orégano.</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <h4>Milho verde com catupiry</h4>
+                  <div class="menu-item__price"><span>R$ 47</span><b>R$ 60</b></div>
+                </div>
+                <p>Milho verde, catupiry cremoso e orégano.</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <h4>Escarola</h4>
+                  <div class="menu-item__price"><span>R$ 50</span><b>R$ 63</b></div>
+                </div>
+                <p>Escarola refogada com alho, com opção de bacon.</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <h4>Napolitana</h4>
+                  <div class="menu-item__price"><span>R$ 52</span><b>R$ 65</b></div>
+                </div>
+                <p>Mussarela, tomate, parmesão e manjericão fresco.</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <h4>Americana</h4>
+                  <div class="menu-item__price"><span>R$ 52</span><b>R$ 65</b></div>
+                </div>
+                <p>Presunto, milho, ervilha e catupiry.</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-panel" data-panel="especiais" role="tabpanel" hidden>
+            <div class="menu-legend"><span>Média (6 fatias)</span><span>Grande (10 fatias)</span></div>
+            <ul class="menu-list">
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <h4>Tomatelli (especial da casa)</h4>
+                  <div class="menu-item__price"><span>R$ 62</span><b>R$ 79</b></div>
+                </div>
+                <p>Mussarela de búfala, tomate seco, rúcula e lascas de parmesão.</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <h4>Lombinho com catupiry</h4>
+                  <div class="menu-item__price"><span>R$ 56</span><b>R$ 70</b></div>
+                </div>
+                <p>Lombo suíno fatiado, catupiry cremoso e orégano.</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <h4>Camarão especial</h4>
+                  <div class="menu-item__price"><span>R$ 68</span><b>R$ 86</b></div>
+                </div>
+                <p>Camarões refogados, catupiry e cebolinha fresca.</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <h4>Palmito com catupiry</h4>
+                  <div class="menu-item__price"><span>R$ 56</span><b>R$ 70</b></div>
+                </div>
+                <p>Palmito, catupiry cremoso e azeitona preta.</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <h4>Chester com cheddar</h4>
+                  <div class="menu-item__price"><span>R$ 58</span><b>R$ 73</b></div>
+                </div>
+                <p>Chester desfiado, molho cheddar e orégano.</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <h4>À moda do chefe</h4>
+                  <div class="menu-item__price"><span>R$ 62</span><b>R$ 78</b></div>
+                </div>
+                <p>Carne seca desfiada, requeijão e cebola caramelizada.</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <h4>Quatro queijos</h4>
+                  <div class="menu-item__price"><span>R$ 58</span><b>R$ 74</b></div>
+                </div>
+                <p>Mussarela, provolone, parmesão e gorgonzola.</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <h4>Siciliana</h4>
+                  <div class="menu-item__price"><span>R$ 54</span><b>R$ 68</b></div>
+                </div>
+                <p>Calabresa, pimenta biquinho, cebola roxa e azeitona.</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <h4>Romanesca</h4>
+                  <div class="menu-item__price"><span>R$ 52</span><b>R$ 66</b></div>
+                </div>
+                <p>Presunto, ovo, azeitona e alho frito.</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <h4>Toscana</h4>
+                  <div class="menu-item__price"><span>R$ 54</span><b>R$ 68</b></div>
+                </div>
+                <p>Linguiça toscana, pimentão, cebola e orégano.</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-panel" data-panel="doces" role="tabpanel" hidden>
+            <div class="menu-legend"><span>Média (6 fatias)</span><span>Grande (10 fatias)</span></div>
+            <ul class="menu-list">
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <h4>Chocolate ao leite</h4>
+                  <div class="menu-item__price"><span>R$ 46</span><b>R$ 58</b></div>
+                </div>
+                <p>Cobertura generosa de chocolate ao leite derretido.</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <h4>Brigadeiro</h4>
+                  <div class="menu-item__price"><span>R$ 48</span><b>R$ 60</b></div>
+                </div>
+                <p>Chocolate cremoso com granulado.</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <h4>Romeu e Julieta</h4>
+                  <div class="menu-item__price"><span>R$ 46</span><b>R$ 58</b></div>
+                </div>
+                <p>Goiabada derretida com mussarela.</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <h4>Prestígio</h4>
+                  <div class="menu-item__price"><span>R$ 50</span><b>R$ 62</b></div>
+                </div>
+                <p>Chocolate ao leite com coco ralado.</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <h4>Ovomaltine</h4>
+                  <div class="menu-item__price"><span>R$ 52</span><b>R$ 65</b></div>
+                </div>
+                <p>Chocolate coberto com Ovomaltine crocante.</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <h4>Confete</h4>
+                  <div class="menu-item__price"><span>R$ 50</span><b>R$ 63</b></div>
+                </div>
+                <p>Chocolate branco com confetes coloridos.</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <h4>Kit Kat</h4>
+                  <div class="menu-item__price"><span>R$ 54</span><b>R$ 68</b></div>
+                </div>
+                <p>Chocolate ao leite com pedaços de Kit Kat.</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-panel" data-panel="bebidas" role="tabpanel" hidden>
+            <ul class="menu-list">
+              <li class="menu-item menu-item--single">
+                <div class="menu-item__row">
+                  <h4>Água mineral 500ml</h4>
+                  <div class="menu-item__price"><b>R$ 6</b></div>
+                </div>
+              </li>
+              <li class="menu-item menu-item--single">
+                <div class="menu-item__row">
+                  <h4>Água com gás 500ml</h4>
+                  <div class="menu-item__price"><b>R$ 7</b></div>
+                </div>
+              </li>
+              <li class="menu-item menu-item--single">
+                <div class="menu-item__row">
+                  <h4>Coca-Cola lata 350ml</h4>
+                  <div class="menu-item__price"><b>R$ 8</b></div>
+                </div>
+              </li>
+              <li class="menu-item menu-item--single">
+                <div class="menu-item__row">
+                  <h4>Coca-Cola sem açúcar lata</h4>
+                  <div class="menu-item__price"><b>R$ 8</b></div>
+                </div>
+              </li>
+              <li class="menu-item menu-item--single">
+                <div class="menu-item__row">
+                  <h4>Coca-Cola PET 2L</h4>
+                  <div class="menu-item__price"><b>R$ 16</b></div>
+                </div>
+              </li>
+              <li class="menu-item menu-item--single">
+                <div class="menu-item__row">
+                  <h4>Guaraná Antarctica lata</h4>
+                  <div class="menu-item__price"><b>R$ 7</b></div>
+                </div>
+              </li>
+              <li class="menu-item menu-item--single">
+                <div class="menu-item__row">
+                  <h4>Fanta laranja / uva lata</h4>
+                  <div class="menu-item__price"><b>R$ 7</b></div>
+                </div>
+              </li>
+              <li class="menu-item menu-item--single">
+                <div class="menu-item__row">
+                  <h4>Guaraviton</h4>
+                  <div class="menu-item__price"><b>R$ 9</b></div>
+                </div>
+              </li>
+              <li class="menu-item menu-item--single">
+                <div class="menu-item__row">
+                  <h4>Suco de açaí 500ml</h4>
+                  <div class="menu-item__price"><b>R$ 14</b></div>
+                </div>
+              </li>
+              <li class="menu-item menu-item--single">
+                <div class="menu-item__row">
+                  <h4>Skol lata 350ml</h4>
+                  <div class="menu-item__price"><b>R$ 7</b></div>
+                </div>
+              </li>
+              <li class="menu-item menu-item--single">
+                <div class="menu-item__row">
+                  <h4>Heineken long neck</h4>
+                  <div class="menu-item__price"><b>R$ 12</b></div>
+                </div>
+              </li>
+              <li class="menu-item menu-item--single">
+                <div class="menu-item__row">
+                  <h4>Corona long neck</h4>
+                  <div class="menu-item__price"><b>R$ 13</b></div>
+                </div>
+              </li>
+              <li class="menu-item menu-item--single">
+                <div class="menu-item__row">
+                  <h4>Stella Artois long neck</h4>
+                  <div class="menu-item__price"><b>R$ 12</b></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="section" id="sobre">
+      <div class="container sobre__grid">
+        <div class="sobre__text">
+          <div class="section-head" style="margin-bottom:1.2rem;">
+            <h2>Massa leve, recheio generoso.</h2>
+          </div>
+          <p>A massa passou por dezenas de testes até chegar num ponto leve e crocante ao mesmo tempo, e o recheio sobe
+            generoso, sem economizar.</p>
+          <p>A Tomatelli está em dois pontos de Itanhaém, facilitando o pedido, a retirada e a entrega. Em qualquer
+            unidade, a proposta é a mesma: pizza bem feita, direto do forno para a mesa.</p>
+        </div>
+        <div class="sobre__points">
+          <div class="sobre__point">
+            <svg>
+              <use href="#icon-flame" />
+            </svg>
+            <div>
+              <h4>Forno a lenha</h4>
+              <p>Assada em fogo direto, do jeito tradicional — sem atalho.</p>
+            </div>
+          </div>
+          <div class="sobre__point">
+            <svg>
+              <use href="#icon-wheat" />
+            </svg>
+            <div>
+              <h4>Massa testada</h4>
+              <p>Desenvolvida ao longo de muitos testes até ficar no ponto certo.</p>
+            </div>
+          </div>
+          <div class="sobre__point">
+            <svg>
+              <use href="#icon-leaf" />
+            </svg>
+            <div>
+              <h4>Recheio sem economia</h4>
+              <p>Ingredientes de qualidade e em quantidade generosa em cada fatia.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONFIANÇA -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="stats">
+          <div class="stat"><b>+12 mil</b><span>seguidores acompanham a Tomatelli no Instagram</span></div>
+          <div class="stat"><b>Eleita a melhor</b><span>pizzaria de Itanhaém, segundo a própria comunidade que segue a
+              página</span></div>
+          <div class="stat"><b>Borda cortesia</b><span>a borda recheada com requeijão é oferecida sem custo extra</span>
+          </div>
+          <div class="stat stat--review"><b>Nota alta</b><span>no Google, com milhares de avaliações de
+              clientes</span><a class="btn btn--ghost review-link"
+              href="https://www.google.com/maps/search/?api=1&amp;query=Tomatelli+Pizzaria+Estrada+Gentil+Peres+338+Itanhaem+SP"
+              target="_blank" rel="noopener noreferrer">Avaliar no Google Maps</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCALIZAÇÃO -->
+    <section class="section location-section" id="localizacao">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Itanhaém</span>
+          <h2>Duas unidades. A mesma Tomatelli.</h2>
+          <p>Escolha a unidade mais conveniente e faça seu pedido online.</p>
+        </div>
+
+        <div class="locations-grid">
+          <article class="location-card glass-card">
+            <div class="location-card__top">
+              <span class="location-badge">Unidade 01</span>
+              <svg aria-hidden="true">
+                <use href="#icon-pin" />
+              </svg>
+            </div>
+            <h3>Jardim Umuarama</h3>
+            <p>Estrada Gentil Peres, 338 — Jardim Umuarama, Itanhaém — SP</p>
+            <div class="location-card__meta">
+              <span><svg>
+                  <use href="#icon-clock" />
+                </svg>Terça a domingo, 18h à meia-noite</span>
+              <span><svg>
+                  <use href="#icon-phone" />
+                </svg>(13) 98131-0808</span>
+            </div>
+            <div class="local__actions">
+              <a class="btn btn--solid" href="https://tomatellipizzaria.wabiz.delivery/" id="waUnit1Btn" target="_blank" rel="noopener noreferrer">Pedir online</a>
+              <a class="btn btn--ghost" href="#" id="mapsUnit1Btn" target="_blank" rel="noopener">Ver no Maps</a>
+            </div>
+          </article>
+
+          <article class="location-card glass-card">
+            <div class="location-card__top">
+              <span class="location-badge">Unidade 02</span>
+              <svg aria-hidden="true">
+                <use href="#icon-pin" />
+              </svg>
+            </div>
+            <h3>Belas Artes</h3>
+            <p>Avenida Harry Forssell, 1001 — Belas Artes, Itanhaém — SP</p>
+            <div class="location-card__meta">
+              <span><svg>
+                  <use href="#icon-clock" />
+                </svg>Terça a domingo, 18h à meia-noite</span>
+              <span><svg>
+                  <use href="#icon-phone" />
+                </svg>(13) 98131-0808</span>
+            </div>
+            <div class="local__actions">
+              <a class="btn btn--solid" href="https://tomatellipizzaria.wabiz.delivery/" id="waUnit2Btn" target="_blank" rel="noopener noreferrer">Pedir online</a>
+              <a class="btn btn--ghost" href="#" id="mapsUnit2Btn" target="_blank" rel="noopener">Ver no Maps</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- AVALIAÇÕES -->
+    <section class="section reviews-section" id="avaliacoes">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Quem conhece, recomenda</span>
+          <h2>Avaliações</h2>
+        </div>
+        <div class="reviews-grid">
+          <article class="review-card">
+            <span class="review-card__quote" aria-hidden="true">“</span>
+            <blockquote>Passando pra agradecer o atendimento maravilhoso sobre um ocorrido de hoje, sempre bom ser correspondido de forma objetiva e profissional, esse é o caminho parabéns a equipe.</blockquote>
+            <div class="review-card__author"><strong>Raphullon</strong><span>Cliente Tomatelli</span></div>
+          </article>
+          <article class="review-card">
+            <span class="review-card__quote" aria-hidden="true">“</span>
+            <blockquote>As duas Pizzarias são sensacionais, desde o atendimento, a rapidez que eles tem na entrega, e sem contar a qualidade da pizza. Com toda certeza digo que é a melhor pizza de Itanhaém. Super recheada, massa bem assada, as Bordas são super recheadas.</blockquote>
+            <div class="review-card__author"><strong>Fabiana Pereira</strong><span>Cliente Tomatelli</span></div>
+          </article>
+          <article class="review-card">
+            <span class="review-card__quote" aria-hidden="true">“</span>
+            <blockquote>Pizza muito saborosa, ingredientes bem temperado e sem miséria, a pizza veio rápido, atendimento excelente e atenciosos, preços na media, super recomendo.</blockquote>
+            <div class="review-card__author"><strong>Rodrigo Cavalcante Nascimento</strong><span>Cliente Tomatelli</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer__grid">
+      <div>
+        <div class="footer__brand">
+          <picture>
+            <source srcset="assets/logo-tomatelli.webp" type="image/webp"><img class="footer-logo"
+              src="assets/logo-tomatelli.png" alt="Tomatelli Pizzaria e Esfiharia" loading="lazy" decoding="async">
+          </picture>
+        </div>
+        <p class="footer__tag">Pizza no forno a lenha, massa artesanal e duas unidades em Itanhaém.</p>
+      </div>
+      <div>
+        <h5>Navegação</h5>
+        <div class="footer__links">
+          <a href="#cardapio">Cardápio</a>
+          <a href="#destaques">Destaques</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#localizacao">Localização</a>
+        <a href="#avaliacoes">Avaliações</a>
+        </div>
+      </div>
+      <div>
+        <h5>Contato</h5>
+        <div class="footer__links">
+          <a href="#" id="waFooterBtn" target="_blank" rel="noopener">WhatsApp: (13) 98131-0808</a>
+          <a href="https://www.instagram.com/tomatellipizzaria/" target="_blank" rel="noopener">Instagram
+            @tomatellipizzaria</a>
+          <a href="https://www.facebook.com/tomatellii/" target="_blank" rel="noopener">Facebook</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year"></span> Tomatelli Pizzaria — Itanhaém, SP</span>
+      <span>Cardápio e preços de referência; confirme os valores atualizados ao pedir.</span>
+    </div>
+  </footer>
+
+  <script src="js/script.js" defer></script>
 </body>
+
 </html>
+
+
+
+
+
+
