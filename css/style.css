@@ -329,8 +329,28 @@ p {
   margin-top: auto;
   padding: 1.5rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 1rem
+}
+
+.mobile-nav__foot .phone-line {
+  width: 44px;
+  height: 44px;
+  justify-content: center;
+  gap: 0;
+  font-size: 0;
+  line-height: 1;
+}
+
+.mobile-nav__foot .phone-line svg {
+  width: 22px;
+  height: 22px;
+}
+
+.mobile-nav__foot .btn {
+  flex: 1 0 100%;
 }
 
 .hero {
@@ -630,6 +650,33 @@ p {
   font-size: .88rem;
   margin-top: .28rem;
   max-width: 52ch
+}
+
+.menu-group + .menu-group { margin-top: 2rem; }
+
+.menu-group-title {
+  margin-bottom: .5rem;
+  color: var(--gold);
+  font-size: 1.6rem;
+}
+
+.menu-item__row h4 { color: var(--text); }
+.menu-item__price b { color: var(--gold); }
+.menu-item p { color: var(--muted); }
+
+.menu-item__badge {
+  padding: .12rem .45rem;
+  border-radius: 999px;
+  background: rgba(239, 59, 54, .16);
+  color: #ff837e;
+  font-size: .72rem;
+  font-weight: 800;
+}
+
+.menu-empty,
+.menu-loading {
+  padding: 1rem 0;
+  color: var(--muted);
 }
 
 .sobre__grid {
@@ -998,11 +1045,18 @@ footer {
   gap: .55rem
 }
 
+.rating-stars {
+  color: var(--gold);
+  font-size: 1.15rem;
+  letter-spacing: .08em;
+  line-height: 1;
+}
+
 .review-link {
-  margin-top: .35rem;
-  font-size: .8rem;
-  min-height: 38px;
-  padding: .5rem .8rem
+  margin-top: .1rem;
+  font-size: .75rem;
+  min-height: 32px;
+  padding: .35rem .7rem
 }
 
 
@@ -1720,14 +1774,32 @@ html {
 
 
 /* Avaliações */
-.reviews-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.25rem;
+.reviews-carousel {
+  overflow: hidden;
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.reviews-carousel.is-dragging { cursor: grabbing; }
+
+.reviews-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+.reviews-set {
+  display: flex;
   align-items: stretch;
+  gap: 1.25rem;
+  padding-right: 1.25rem;
 }
 
 .review-card {
+  flex: 0 0 clamp(290px, 30vw, 370px);
+  min-height: 290px;
   display: flex;
   flex-direction: column;
   min-width: 0;
@@ -1772,17 +1844,17 @@ html {
   font-size: .88rem;
 }
 
+.review-card__author a:hover {
+  color: var(--gold);
+}
+
 @media (max-width: 900px) {
-  .reviews-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+  .review-card { flex-basis: min(42vw, 360px); }
 }
 
 @media (max-width: 600px) {
-  .reviews-grid {
-    grid-template-columns: 1fr;
-    gap: .85rem;
-  }
+  .reviews-set { gap: .85rem; padding-right: .85rem; }
+  .review-card { flex-basis: min(82vw, 360px); }
 }
 
 /* Leitura do cabeçalho e enquadramento da foto principal */
@@ -1840,4 +1912,127 @@ html {
 
 .mobile-nav__top .hamburger span {
   background: #171717;
+}
+
+/* ══ CURSOR PERSONALIZADO (js/cursor.js) ══
+   Só existe com mouse: o JS nem cria o elemento em telas de toque.
+   mix-blend-mode: difference inverte a cor sobre o fundo (creme, foto escura,
+   botão vermelho, rodapé preto), então mantém contraste em qualquer seção. */
+html.has-cursor,
+html.has-cursor * {
+  cursor: none !important;
+}
+
+.cursor {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  mix-blend-mode: difference;
+  transition: opacity .25s ease;
+}
+
+.cursor.is-ativo {
+  opacity: 1;
+}
+
+.cursor__ponto,
+.cursor__anel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+}
+
+.cursor__ponto {
+  width: 10px;
+  height: 10px;
+}
+
+/* scale fica no filho: no mesmo elemento do translate ele escalaria a posição */
+.cursor__ponto i {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #fafafa;
+  transition: scale .2s ease;
+}
+
+.cursor__anel {
+  width: 38px;
+  height: 38px;
+}
+
+.cursor__anel i {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, .9);
+  transition: scale .25s cubic-bezier(.2, .8, .2, 1), background-color .25s ease;
+}
+
+.cursor.is-sobre .cursor__anel i {
+  scale: 1.55;
+  background-color: rgba(255, 255, 255, .18);
+}
+
+.cursor.is-sobre .cursor__ponto i {
+  scale: .5;
+}
+
+.cursor.is-clique .cursor__anel i {
+  scale: .8;
+}
+
+.cursor.is-sobre.is-clique .cursor__anel i {
+  scale: 1.25;
+}
+
+/* ══ TEXTO QUE SE PREENCHE (js/preencher.js) ══
+   As palavras só ficam apagadas depois que o JS as cria (.is-pronto):
+   sem JS ou com "reduzir movimento" o texto fica normal e legível. */
+.sobre__text .js-pintar p {
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+  line-height: 1.6;
+}
+
+.js-pintar.is-pronto .js-pintar__w {
+  opacity: .18;
+  transition: opacity .2s linear;
+}
+
+/* ══ BOTÃO ELÁSTICO (js/elastico.js) ══
+   A mola do JS controla o transform. Sem isso, a transição de 0,2 s do .btn
+   e o translateY do :hover brigariam com ela a cada quadro. A classe
+   .is-elastico só existe quando o JS está ativo, então sem JS ou com
+   "reduzir movimento" o botão mantém o comportamento antigo. */
+.btn.is-elastico {
+  transition: box-shadow .2s ease, background .2s ease, border-color .2s ease;
+  will-change: transform;
+}
+
+.btn--solid.is-elastico:hover {
+  transform: none;
+}
+
+/* Folga para a mola: o botão cresce até ~18% no pico do overshoot (≈15 px por lado
+   num botão de 165 px), então o espaço entre vizinhos precisa ser maior que isso. */
+.hero__actions,
+.local__actions {
+  gap: 1.05rem;
+}
+
+.local__actions {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1.1rem;   /* os botões colavam na linha do telefone; a mola ainda cresce ~4 px para cima */
+}
+
+.btn.is-elastico:hover,
+.btn.is-elastico:focus-visible {
+  position: relative;
+  z-index: 2;
 }

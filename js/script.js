@@ -51,19 +51,117 @@ document.addEventListener('DOMContentLoaded', () => {
     if (link) link.href = orderUrl;
   });
 
-  const tabs = document.querySelectorAll('.menu-tab');
-  const panels = document.querySelectorAll('.menu-panel');
-  tabs.forEach(tab => tab.addEventListener('click', () => {
-    tabs.forEach(item => {
-      item.classList.toggle('is-active', item === tab);
-      item.setAttribute('aria-selected', String(item === tab));
+  const menuTabs = document.getElementById('menuTabs');
+  const menuPanels = document.getElementById('menuPanels');
+  const menuCategories = window.TOMATELLI_CARDAPIO?.categories;
+  if (menuTabs && menuPanels && Array.isArray(menuCategories)) {
+    const formatPrice = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+    const tabs = [];
+    const panels = [];
+
+    const activateMenuCategory = activeIndex => {
+      tabs.forEach((tab, index) => {
+        const active = index === activeIndex;
+        tab.classList.toggle('is-active', active);
+        tab.setAttribute('aria-selected', String(active));
+        tab.tabIndex = active ? 0 : -1;
+      });
+      panels.forEach((panel, index) => {
+        const active = index === activeIndex;
+        panel.classList.toggle('is-active', active);
+        panel.hidden = !active;
+      });
+    };
+
+    menuCategories.forEach((category, index) => {
+      const tabId = `menu-tab-${index}`;
+      const panelId = `menu-panel-${index}`;
+      const tab = document.createElement('button');
+      tab.type = 'button';
+      tab.className = 'menu-tab';
+      tab.id = tabId;
+      tab.setAttribute('role', 'tab');
+      tab.setAttribute('aria-controls', panelId);
+      tab.setAttribute('aria-selected', 'false');
+      tab.tabIndex = -1;
+      tab.textContent = category.name;
+      tab.addEventListener('click', () => activateMenuCategory(index));
+      tab.addEventListener('keydown', event => {
+        if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+        event.preventDefault();
+        const nextIndex = event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1 :
+          (index + (event.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
+        tabs[nextIndex].focus();
+        activateMenuCategory(nextIndex);
+      });
+      menuTabs.append(tab);
+      tabs.push(tab);
+
+      const panel = document.createElement('div');
+      panel.className = 'menu-panel';
+      panel.id = panelId;
+      panel.setAttribute('role', 'tabpanel');
+      panel.setAttribute('aria-labelledby', tabId);
+      panel.tabIndex = 0;
+
+      if (!category.groups?.length) {
+        const emptyMessage = document.createElement('p');
+        emptyMessage.className = 'menu-empty';
+        emptyMessage.textContent = 'Sem itens disponíveis no delivery nesta categoria no momento.';
+        panel.append(emptyMessage);
+      }
+
+      (category.groups || []).forEach(group => {
+        const groupElement = document.createElement('section');
+        groupElement.className = 'menu-group';
+        if (group.name) {
+          const groupTitle = document.createElement('h3');
+          groupTitle.className = 'menu-group-title';
+          groupTitle.textContent = group.name.trim();
+          groupElement.append(groupTitle);
+        }
+
+        const list = document.createElement('ul');
+        list.className = 'menu-list';
+        group.items.forEach(item => {
+          const row = document.createElement('li');
+          row.className = 'menu-item';
+          const headingRow = document.createElement('div');
+          headingRow.className = 'menu-item__row';
+          const title = document.createElement('h4');
+          title.textContent = item.name;
+          headingRow.append(title);
+          if (item.isNew) {
+            const badge = document.createElement('span');
+            badge.className = 'menu-item__badge';
+            badge.textContent = 'Novo';
+            headingRow.append(badge);
+          }
+          const price = document.createElement('div');
+          price.className = 'menu-item__price';
+          const amount = document.createElement('b');
+          amount.textContent = formatPrice.format(item.price);
+          price.append(amount);
+          headingRow.append(price);
+          row.append(headingRow);
+          if (item.details?.trim()) {
+            const details = document.createElement('p');
+            details.textContent = item.details.trim();
+            row.append(details);
+          }
+          list.append(row);
+        });
+        groupElement.append(list);
+        panel.append(groupElement);
+      });
+
+      menuPanels.append(panel);
+      panels.push(panel);
     });
-    panels.forEach(panel => {
-      const active = panel.dataset.panel === tab.dataset.tab;
-      panel.classList.toggle('is-active', active);
-      panel.toggleAttribute('hidden', !active);
-    });
-  }));
+    if (tabs.length) activateMenuCategory(0);
+  } else if (menuPanels) {
+    menuPanels.textContent = 'Não foi possível carregar o cardápio agora. Acesse o delivery para ver os itens atualizados.';
+  }
 
   if ('IntersectionObserver' in window) {
     const revealObserver = new IntersectionObserver(entries => {
@@ -78,6 +176,100 @@ document.addEventListener('DOMContentLoaded', () => {
       element.classList.add('reveal');
       revealObserver.observe(element);
     });
+  }
+
+  const reviewsCarousel = document.querySelector('.reviews-carousel');
+  const reviewsTrack = reviewsCarousel?.querySelector('.reviews-track');
+  const reviewsSet = reviewsTrack?.querySelector('.reviews-set');
+  if (reviewsCarousel && reviewsTrack && reviewsSet) {
+    const duplicateSet = reviewsSet.cloneNode(true);
+    duplicateSet.setAttribute('aria-hidden', 'true');
+    duplicateSet.querySelectorAll('a').forEach(link => link.setAttribute('tabindex', '-1'));
+    reviewsTrack.append(duplicateSet);
+
+    let setWidth = 0;
+    let offset = 0;
+    let frame = 0;
+    let previousTime = 0;
+    let pointerId = null;
+    let pointerStart = 0;
+    let offsetStart = 0;
+    let dragged = false;
+    let suppressClick = false;
+
+    const wrapOffset = value => setWidth ? ((value % setWidth) + setWidth) % setWidth : 0;
+    const paintTrack = () => {
+      reviewsTrack.style.transform = `translate3d(${-offset}px, 0, 0)`;
+    };
+    const measureTrack = () => {
+      setWidth = reviewsSet.getBoundingClientRect().width;
+      offset = wrapOffset(offset);
+      paintTrack();
+    };
+    const animateTrack = time => {
+      if (document.hidden) return;
+      if (previousTime && pointerId === null) {
+        offset = wrapOffset(offset + (time - previousTime) * 0.03);
+        paintTrack();
+      }
+      previousTime = time;
+      frame = requestAnimationFrame(animateTrack);
+    };
+
+    reviewsCarousel.addEventListener('pointerdown', event => {
+      if (event.button !== undefined && event.button !== 0) return;
+      pointerId = event.pointerId;
+      pointerStart = event.clientX;
+      offsetStart = offset;
+      dragged = false;
+      previousTime = 0;
+    });
+    window.addEventListener('pointermove', event => {
+      if (event.pointerId !== pointerId) return;
+      const distance = event.clientX - pointerStart;
+      if (Math.abs(distance) > 5) {
+        dragged = true;
+        reviewsCarousel.classList.add('is-dragging');
+        event.preventDefault();
+      }
+      if (dragged) {
+        offset = wrapOffset(offsetStart - distance);
+        paintTrack();
+      }
+    }, { passive: false });
+    const finishDrag = event => {
+      if (event.pointerId !== pointerId) return;
+      pointerId = null;
+      reviewsCarousel.classList.remove('is-dragging');
+      previousTime = 0;
+      if (dragged) {
+        suppressClick = true;
+        window.setTimeout(() => { suppressClick = false; }, 0);
+      }
+    };
+    window.addEventListener('pointerup', finishDrag);
+    window.addEventListener('pointercancel', finishDrag);
+    reviewsCarousel.addEventListener('click', event => {
+      if (!suppressClick) return;
+      event.preventDefault();
+      event.stopPropagation();
+    }, true);
+    reviewsCarousel.addEventListener('keydown', event => {
+      if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+      event.preventDefault();
+      offset = wrapOffset(offset + (event.key === 'ArrowRight' ? 100 : -100));
+      paintTrack();
+      previousTime = 0;
+    });
+
+    window.addEventListener('resize', measureTrack, { passive: true });
+    document.fonts?.ready.then(measureTrack);
+    document.addEventListener('visibilitychange', () => {
+      previousTime = 0;
+      if (!document.hidden) frame = requestAnimationFrame(animateTrack);
+    });
+    measureTrack();
+    frame = requestAnimationFrame(animateTrack);
   }
 
   document.querySelectorAll('a[href^="#"]').forEach(link => link.addEventListener('click', event => {
