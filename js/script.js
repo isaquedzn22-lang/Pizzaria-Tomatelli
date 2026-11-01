@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const formatPrice = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
     const tabs = [];
     const panels = [];
+    menuPanels.replaceChildren();
 
     const activateMenuCategory = activeIndex => {
       tabs.forEach((tab, index) => {
