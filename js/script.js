@@ -53,12 +53,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const menuTabs = document.getElementById('menuTabs');
   const menuPanels = document.getElementById('menuPanels');
+  const menuSearch = document.getElementById('menuSearch');
   const menuCategories = window.TOMATELLI_CARDAPIO?.categories;
   if (menuTabs && menuPanels && Array.isArray(menuCategories)) {
     const formatPrice = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
     const tabs = [];
     const panels = [];
     menuPanels.replaceChildren();
+
+    const filterMenuPanel = (panel, query) => {
+      if (!panel) return;
+      let visibleItems = 0;
+      panel.querySelectorAll('.menu-group').forEach(group => {
+        let groupItems = 0;
+        group.querySelectorAll('.menu-item').forEach(item => {
+          const matches = item.textContent.toLocaleLowerCase('pt-BR').includes(query);
+          item.hidden = !matches;
+          if (matches) groupItems++;
+        });
+        group.hidden = groupItems === 0;
+        visibleItems += groupItems;
+      });
+      const noResults = panel.querySelector('.menu-no-results');
+      if (noResults) noResults.hidden = !query || visibleItems > 0;
+    };
 
     const activateMenuCategory = activeIndex => {
       tabs.forEach((tab, index) => {
@@ -72,6 +90,10 @@ document.addEventListener('DOMContentLoaded', () => {
         panel.classList.toggle('is-active', active);
         panel.hidden = !active;
       });
+      if (menuSearch) {
+        menuSearch.value = '';
+      }
+      filterMenuPanel(panels[activeIndex], '');
     };
 
     menuCategories.forEach((category, index) => {
@@ -155,9 +177,20 @@ document.addEventListener('DOMContentLoaded', () => {
         groupElement.append(list);
         panel.append(groupElement);
       });
+      if (category.groups?.length) {
+        const noResults = document.createElement('p');
+        noResults.className = 'menu-no-results';
+        noResults.hidden = true;
+        noResults.textContent = 'Nenhum item encontrado com essa busca.';
+        panel.append(noResults);
+      }
 
       menuPanels.append(panel);
       panels.push(panel);
+    });
+    menuSearch?.addEventListener('input', () => {
+      const activePanel = panels.find(panel => panel.classList.contains('is-active'));
+      filterMenuPanel(activePanel, menuSearch.value.trim().toLocaleLowerCase('pt-BR'));
     });
     if (tabs.length) activateMenuCategory(0);
   } else if (menuPanels) {

@@ -562,6 +562,23 @@ p {
   border-bottom: 1px solid var(--line)
 }
 
+.menu-controls { margin-bottom: 2rem; }
+.menu-controls .menu-tabs { margin-bottom: .75rem; }
+
+.menu-search {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  padding: .65rem .85rem;
+  border: 1px solid var(--line-soft);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .04);
+  color: var(--text);
+  font: inherit;
+}
+
+.menu-search::placeholder { color: var(--muted); }
+
 .menu-tab {
   padding: .62rem 1.1rem;
   border-radius: 999px;
@@ -674,7 +691,8 @@ p {
 }
 
 .menu-empty,
-.menu-loading {
+.menu-loading,
+.menu-no-results {
   padding: 1rem 0;
   color: var(--muted);
 }
@@ -1855,6 +1873,53 @@ html {
 @media (max-width: 600px) {
   .reviews-set { gap: .85rem; padding-right: .85rem; }
   .review-card { flex-basis: min(82vw, 360px); }
+}
+
+@media (max-width: 760px) {
+  .menu-controls {
+    position: sticky;
+    top: calc(78px + var(--safe-t));
+    z-index: 25;
+    margin: 0 -1.25rem 1.25rem;
+    padding: .65rem 1.25rem .75rem;
+    border-block: 1px solid var(--line-soft);
+    background: rgba(7, 7, 7, .97);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+
+  .menu-controls .menu-tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: .5rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    margin-bottom: .65rem;
+    padding: 0 0 .35rem;
+    border: 0;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .menu-controls .menu-tabs::-webkit-scrollbar { display: none; }
+
+  .menu-controls .menu-tab {
+    flex: 0 0 auto;
+    width: auto;
+    min-height: 42px;
+    padding: .55rem .8rem;
+    white-space: nowrap;
+    scroll-snap-align: start;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 760px) {
+  .menu-controls { margin-inline: -2rem; padding-inline: 2rem; }
+}
+
+@media (max-width: 380px) {
+  .menu-controls { margin-inline: -1rem; padding-inline: 1rem; }
 }
 
 /* Leitura do cabeçalho e enquadramento da foto principal */
