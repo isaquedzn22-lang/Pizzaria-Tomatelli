@@ -2101,3 +2101,15 @@ html.has-cursor * {
   position: relative;
   z-index: 2;
 }
+
+
+/* Segurança: o cardápio permanece visível mesmo se a animação de revelação falhar no mobile. */
+#cardapio.reveal {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+#cardapio .menu-panels {
+  min-height: 2rem;
+}

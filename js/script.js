@@ -206,7 +206,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }, { threshold: 0.08 });
-    document.querySelectorAll('.section, .destaque, .location-card').forEach(element => {
+    // O cardápio não depende da animação de entrada: mantém a seção acessível em celulares.
+    document.querySelectorAll('.section:not(#cardapio), .destaque, .location-card').forEach(element => {
       element.classList.add('reveal');
       revealObserver.observe(element);
     });
