@@ -2102,14 +2102,145 @@ html.has-cursor * {
   z-index: 2;
 }
 
-
-/* Segurança: o cardápio permanece visível mesmo se a animação de revelação falhar no mobile. */
-#cardapio.reveal {
-  opacity: 1;
-  transform: none;
-  filter: none;
+/* Destaques da casa: galeria real da Pizza Trem, responsiva */
+.destaque--trem {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(250px, .75fr);
+  align-items: stretch;
+  gap: clamp(1rem, 3vw, 2.25rem);
+  padding: clamp(1rem, 2.5vw, 1.75rem);
+  background: linear-gradient(145deg, #671f17, #351411) !important;
+  min-height: 390px;
+}
+.destaque--trem::after { display: none; }
+.destaque-trem__fotos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .65rem;
+  min-width: 0;
+}
+.destaque-trem__fotos img {
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+.destaque-trem__conteudo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+.destaque-trem__etiqueta {
+  display: inline-block;
+  align-self: flex-start;
+  color: #ffe2b2;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  margin-bottom: .75rem;
+}
+.destaque--trem .destaque-trem__conteudo p { max-width: 42ch; }
+@media (max-width: 900px) {
+  .destaque--trem { grid-template-columns: 1fr; min-height: auto; }
+  .destaque-trem__fotos img { min-height: 180px; height: clamp(180px, 35vw, 330px); }
+  .destaque-trem__conteudo { padding: .3rem .2rem .5rem; }
+}
+@media (max-width: 480px) {
+  .destaque-trem__fotos { grid-template-columns: 1fr; }
+  .destaque-trem__fotos img { height: 220px; min-height: 0; }
+  .destaque--trem { padding: .8rem; }
 }
 
-#cardapio .menu-panels {
-  min-height: 2rem;
+
+/* ===== Nova vitrine Pizza Trem: substitui os três cartões antigos ===== */
+.trem-showcase { overflow: hidden; }
+.trem-showcase__heading { max-width: 760px; margin-bottom: clamp(1.6rem, 4vw, 2.8rem); }
+.trem-showcase__eyebrow { display: block; margin-bottom: .7rem; color: var(--tomato, #bd392b); font-size: .78rem; font-weight: 800; text-transform: uppercase; letter-spacing: .15em; }
+.trem-showcase__heading h2 { font-size: clamp(2rem, 4.6vw, 3.7rem); line-height: 1.1; letter-spacing: -.045em; }
+.trem-showcase__heading h2 em { font-style: normal; color: var(--tomato, #bd392b); }
+.trem-showcase__heading p { margin-top: 1rem; max-width: 58ch; }
+.trem-showcase__layout { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(290px, .75fr); background: #201713; border-radius: 24px; overflow: hidden; box-shadow: 0 24px 60px rgba(20, 10, 5, .18); }
+.trem-showcase__gallery { min-width: 0; display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, .7fr); gap: 6px; min-height: 480px; background: #2c201b; }
+.trem-showcase__photo { margin: 0; min-width: 0; overflow: hidden; }
+.trem-showcase__photo img { display: block; width: 100%; height: 100%; min-height: 480px; object-fit: cover; transition: transform .55s ease; }
+.trem-showcase__photo--main img { object-position: 50% 50%; }
+.trem-showcase__photo--secondary img { object-position: 50% 50%; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) { .trem-showcase__photo:hover img { transform: scale(1.035); } }
+.trem-showcase__details { display: flex; flex-direction: column; justify-content: center; padding: clamp(1.6rem, 3.5vw, 3.3rem); color: #fff6ec; }
+.trem-showcase__tag { color: #f2ba85; font-size: .74rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.trem-showcase__details h3 { margin: .8rem 0 1.1rem; color: #fffaf4; font-size: clamp(2.8rem, 5vw, 4.7rem); line-height: 1; letter-spacing: -.055em; }
+.trem-showcase__details h3 span { color: #f0a56c; }
+.trem-showcase__details > p { color: #eadbd0; line-height: 1.7; }
+.trem-showcase__facts { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; padding: 1.5rem 0; margin-top: 1.2rem; border-top: 1px solid rgba(255,255,255,.16); }
+.trem-showcase__facts div { display: flex; flex-direction: column; gap: .3rem; }
+.trem-showcase__facts strong { color: #fffaf4; font-size: 1.03rem; }
+.trem-showcase__facts span { color: #d9c9bc; font-size: .8rem; }
+.trem-showcase__button { align-self: flex-start; display: inline-flex; align-items: center; gap: 1rem; padding: .9rem 1.3rem; background: #d74632; color: white !important; border-radius: 100px; font-weight: 750; text-decoration: none; min-height: 46px; transition: background .2s ease, transform .2s ease; }
+.trem-showcase__button:hover { background: #b92e20; transform: translateY(-2px); }
+.trem-showcase__button:focus-visible { outline: 3px solid #ffd3a8; outline-offset: 4px; }
+@media (max-width: 980px) { .trem-showcase__layout { grid-template-columns: 1fr; } .trem-showcase__gallery { min-height: 340px; } .trem-showcase__photo img { height: 340px; min-height: 0; } .trem-showcase__details { padding: clamp(1.4rem, 5vw, 2.6rem); } }
+@media (max-width: 540px) { .trem-showcase__layout { border-radius: 18px; } .trem-showcase__gallery { grid-template-columns: 1fr 1fr; min-height: 0; gap: 4px; } .trem-showcase__photo img { height: 210px; min-height: 0; } .trem-showcase__details h3 { font-size: 3.1rem; } .trem-showcase__facts { gap: .6rem; } .trem-showcase__facts strong { font-size: .9rem; } .trem-showcase__button { width: 100%; justify-content: center; } }
+@media (max-width: 360px) { .trem-showcase__photo img { height: 165px; } .trem-showcase__facts { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .trem-showcase__photo img, .trem-showcase__button { transition: none; } }
+
+
+/* Destaques v2: preserva integralmente as fotografias, inclusive em mobile */
+.showcase-v2 { overflow: hidden; }
+.showcase-v2__heading { margin-bottom: clamp(1.5rem,3vw,2.5rem); }
+.showcase-v2__eyebrow { display:block; color:#bd392b; font-weight:800; letter-spacing:.14em; text-transform:uppercase; font-size:.78rem; margin-bottom:.7rem; }
+.showcase-v2__heading h2 { font-size:clamp(2rem,4.6vw,3.7rem); line-height:1.1; letter-spacing:-.045em; }
+.showcase-v2__heading h2 em { font-style:normal; color:#bd392b; }
+.showcase-v2__heading p { margin-top:.85rem; }
+.showcase-v2__feature { display:grid; grid-template-columns:minmax(0,1.45fr) minmax(280px,.85fr); background:#201713; border-radius:22px; overflow:hidden; margin-bottom:clamp(1.3rem,3vw,2rem); box-shadow:0 18px 48px rgba(20,10,5,.15); }
+.showcase-v2__feature--twelve { grid-template-columns:minmax(280px,.8fr) minmax(0,1.5fr); }
+.showcase-v2__gallery { display:grid; min-width:0; gap:8px; background:#30231d; padding:12px; }
+.showcase-v2__gallery--trem { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.showcase-v2__gallery--twelve { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.showcase-v2__gallery figure { margin:0; min-width:0; display:flex; align-items:center; justify-content:center; background:#3a2b23; border-radius:12px; overflow:hidden; }
+.showcase-v2__gallery img { display:block; width:100%; height:100%; max-height:470px; object-fit:contain; object-position:center; }
+.showcase-v2__gallery--trem figure { height:440px; }
+.showcase-v2__gallery--twelve figure { height:420px; }
+.showcase-v2__copy { color:#fff6ec; display:flex; flex-direction:column; justify-content:center; align-items:flex-start; padding:clamp(1.5rem,3vw,3rem); }
+.showcase-v2__tag { color:#f2ba85; text-transform:uppercase; font-size:.75rem; font-weight:800; letter-spacing:.12em; }
+.showcase-v2__copy h3 { color:#fffaf4; font-size:clamp(2rem,4vw,3.8rem); line-height:1.06; margin:.75rem 0 1rem; }
+.showcase-v2__copy p { color:#eadbd0; line-height:1.7; }
+.showcase-v2__chips { display:flex; flex-wrap:wrap; gap:.55rem; margin:1.3rem 0; }
+.showcase-v2__chips span { border:1px solid rgba(255,255,255,.22); border-radius:99px; padding:.45rem .75rem; color:#f5d5b9; font-size:.82rem; }
+.showcase-v2__button { display:inline-flex; gap:1rem; align-items:center; justify-content:center; min-height:46px; padding:.85rem 1.25rem; background:#d74632; color:#fff!important; border-radius:99px; font-weight:750; text-decoration:none; }
+.showcase-v2__button:hover { background:#b92e20; }
+.showcase-v2__button:focus-visible { outline:3px solid #ffd3a8; outline-offset:3px; }
+@media(max-width:1000px) {
+ .showcase-v2__feature,.showcase-v2__feature--twelve { grid-template-columns:1fr; }
+ .showcase-v2__feature--twelve .showcase-v2__gallery { grid-row:1; }
+ .showcase-v2__feature--twelve .showcase-v2__copy { grid-row:2; }
+ .showcase-v2__gallery--trem figure { height:340px; }
+ .showcase-v2__gallery--twelve figure { height:330px; }
+}
+@media(max-width:600px) {
+ .showcase-v2__feature { border-radius:17px; }
+ .showcase-v2__gallery { padding:8px; gap:8px; }
+ .showcase-v2__gallery--trem { grid-template-columns:1fr; }
+ .showcase-v2__gallery--trem figure { height:auto; min-height:0; }
+ .showcase-v2__gallery--trem img { height:auto; max-height:none; }
+ .showcase-v2__gallery--twelve { grid-template-columns:1fr; }
+ .showcase-v2__gallery--twelve figure { height:auto; }
+ .showcase-v2__gallery--twelve img { height:auto; max-height:none; }
+ .showcase-v2__copy { padding:1.5rem; }
+ .showcase-v2__copy h3 { font-size:2.5rem; }
+ .showcase-v2__button { width:100%; }
+}
+
+/* Terceira vitrine: pizza de 10 fatias, imagem inteira sem cortes */
+.showcase-v2__gallery--ten { display: flex; align-items: center; justify-content: center; min-width: 0; }
+.showcase-v2__gallery--ten figure { width: 100%; margin: 0; display: flex; align-items: center; justify-content: center; background: #211713; border-radius: 16px; overflow: hidden; }
+.showcase-v2__gallery--ten img { display: block; width: 100%; height: auto; max-height: 590px; object-fit: contain !important; object-position: center; }
+@media (max-width: 767px) {
+ .showcase-v2__feature--ten { min-width: 0; }
+ .showcase-v2__gallery--ten img { max-height: none; width: 100%; height: auto; }
 }

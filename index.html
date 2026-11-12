@@ -4,6 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="assets/favicon-192.png">
   <title>Tomatelli Pizzaria — Itanhaém</title>
   <meta name="description"
     content="Tomatelli Pizzaria em Itanhaém. Confira o cardápio, conheça nossas duas unidades e peça online.">
@@ -194,30 +198,53 @@
       </div>
     </section>
 
-    <!-- DESTAQUES -->
-    <section class="section" id="destaques">
+    <!-- DESTAQUES: fotos reais sem cortes -->
+    <section class="section showcase-v2" id="destaques" aria-labelledby="destaques-title">
       <div class="container">
-        <div class="section-head">
-          <h2>Destaques da casa</h2>
-          <p>Os pedidos que fazem os clientes voltarem — e chamarem os amigos.</p>
-        </div>
-        <div class="destaques__grid">
-          <div class="destaque destaque--lg">
+        <header class="showcase-v2__heading">
+          <span class="showcase-v2__eyebrow">Especialidades Tomatelli</span>
+          <h2 id="destaques-title">Destaques <em>da casa</em></h2>
+          <p>Do tamanho da sua fome. Conheça nossas pizzas especiais em fotos reais.</p>
+        </header>
+        <article class="showcase-v2__feature">
+          <div class="showcase-v2__gallery showcase-v2__gallery--trem" aria-label="Duas fotos da Pizza Trem">
+            <figure><img src="assets/pizza-trem-destaque-2.webp" alt="Pizza Trem completa com quatro sabores, vista de cima" loading="lazy" decoding="async"></figure>
+            <figure><img src="assets/pizza-trem-destaque-1.webp" alt="Pizza Trem inteira na caixa aberta" loading="lazy" decoding="async"></figure>
+          </div>
+          <div class="showcase-v2__copy">
+            <span class="showcase-v2__tag">Para compartilhar</span>
             <h3>Pizza Trem</h3>
-            <p>Quase um metro de comprimento e até 4 sabores na mesma pizza. Feita para dividir com a família inteira —
-              ou com um grupo grande de amigos.</p>
+            <p>Quase um metro de comprimento e até quatro sabores na mesma pizza. A escolha ideal para reunir a família e os amigos.</p>
+            <div class="showcase-v2__chips"><span>Quase 1 metro</span><span>Até 4 sabores</span></div>
+            <a class="showcase-v2__button" href="#cardapio">Ver cardápio <span aria-hidden="true">↗</span></a>
           </div>
-          <div class="destaque destaque--sm">
-            <h3>Pizza quadrada</h3>
-            <p>Corte diferente, recheio igualmente farto — para quem quer variar o formato sem abrir mão do sabor de
-              sempre.</p>
+        </article>
+        <article class="showcase-v2__feature showcase-v2__feature--twelve">
+          <div class="showcase-v2__copy">
+            <span class="showcase-v2__tag">Mais sabores para dividir</span>
+            <h3>Pizza de 12 fatias</h3>
+            <p>Uma pizza generosa para compartilhar. Confira os sabores disponíveis no nosso cardápio.</p>
+            <div class="showcase-v2__chips"><span>12 fatias</span><span>Para toda a turma</span></div>
+            <a class="showcase-v2__button" href="#cardapio">Explorar sabores <span aria-hidden="true">↗</span></a>
           </div>
-          <div class="destaque destaque--sm">
-            <h3>Borda de requeijão</h3>
-            <p>Uma cortesia da casa: peça a borda recheada e ela vem sem custo extra, do jeito que os clientes mais
-              pedem.</p>
+          <div class="showcase-v2__gallery showcase-v2__gallery--twelve" aria-label="Três fotos das pizzas de 12 fatias">
+            <figure><img src="assets/pizza-12-fatias-1.webp" alt="Pizza redonda de sabores variados sobre cesta de vime" loading="lazy" decoding="async"></figure>
+            <figure><img src="assets/pizza-12-fatias-2.webp" alt="Pizza de 12 fatias na caixa Tomatelli com sabores doces e salgados" loading="lazy" decoding="async"></figure>
+            <figure><img src="assets/pizza-12-fatias-3.webp" alt="Pizza de 12 fatias com dois sabores vista de cima" loading="lazy" decoding="async"></figure>
           </div>
-        </div>
+        </article>
+        <article class="showcase-v2__feature showcase-v2__feature--ten">
+          <div class="showcase-v2__gallery showcase-v2__gallery--ten" aria-label="Foto real da pizza de 10 fatias">
+            <figure><img src="assets/pizza-10-fatias.webp" alt="Pizza de 10 fatias Tomatelli com cobertura de chocolate e pedaços de chocolate, exibida na caixa da pizzaria" loading="lazy" decoding="async"></figure>
+          </div>
+          <div class="showcase-v2__copy">
+            <span class="showcase-v2__tag">Para adoçar o momento</span>
+            <h3>Pizza de 10 fatias</h3>
+            <p>Uma pizza generosa para compartilhar. Confira os sabores e as opções disponíveis no nosso cardápio.</p>
+            <div class="showcase-v2__chips"><span>10 fatias</span><span>Para compartilhar</span></div>
+            <a class="showcase-v2__button" href="#cardapio">Ver cardápio <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
       </div>
     </section>
 
