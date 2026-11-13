@@ -1,0 +1,18 @@
+# Tomatelli Pizzaria e Esfiharia
+
+> Pizzaria em Itanhaém, SP, com Pizza Trem, pizzas de 10 e 12 fatias, duas unidades e pedido online.
+
+## Informações oficiais
+
+- Site: https://tomatellipizzaria.com.br/
+- Pedido e cardápio no aplicativo: https://tomatellipizzaria.wabiz.delivery/
+- Instagram: https://www.instagram.com/tomatellipizzaria/
+- Jardim Umuarama: Estrada Gentil Peres, 338, Itanhaém, SP
+- Belas Artes: Avenida Harry Forssell, 1001, Itanhaém, SP
+- Atendimento informado no site: terça a domingo, das 18h à meia-noite
+
+## Destaques
+
+- Pizza Trem: até quatro sabores no mesmo pedido.
+- Pizzas de 10 e 12 fatias.
+- Sabores, preços e disponibilidade devem ser consultados diretamente no aplicativo.

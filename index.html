@@ -11,6 +11,37 @@
   <title>Tomatelli Pizzaria — Itanhaém</title>
   <meta name="description"
     content="Tomatelli Pizzaria em Itanhaém. Confira o cardápio, conheça nossas duas unidades e peça online.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self'; form-action 'self'; upgrade-insecure-requests">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "@id": "https://tomatellipizzaria.com.br/#restaurant",
+    "name": "Tomatelli Pizzaria e Esfiharia",
+    "url": "https://tomatellipizzaria.com.br/",
+    "logo": "https://tomatellipizzaria.com.br/assets/logo-tomatelli.png",
+    "telephone": "+55-13-98131-0808",
+    "servesCuisine": ["Pizza", "Esfiha"],
+    "sameAs": [
+      "https://www.instagram.com/tomatellipizzaria/",
+      "https://www.facebook.com/tomatellii/",
+      "https://tomatellipizzaria.wabiz.delivery/"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Estrada Gentil Peres, 338 - Jardim Umuarama",
+      "addressLocality": "Itanhaém",
+      "addressRegion": "SP",
+      "addressCountry": "BR"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "18:00",
+      "closes": "00:00"
+    }
+  }
+  </script>
   <meta name="theme-color" content="#070707" id="themeColor">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -71,7 +102,7 @@
         </picture>
       </a>
       <nav class="site-nav" aria-label="Navegação principal">
-        <a href="#cardapio">Cardápio</a>
+        <a href="https://tomatellipizzaria.wabiz.delivery/" target="_blank" rel="noopener noreferrer">Cardápio</a>
         <a href="#destaques">Destaques</a>
         <a href="#sobre">Sobre</a>
         <a href="#localizacao">Localização</a>
@@ -115,7 +146,7 @@
       </button>
     </div>
     <nav class="mobile-nav__links" aria-label="Navegação (menu móvel)">
-      <a href="#cardapio" data-close>Cardápio</a>
+      <a href="https://tomatellipizzaria.wabiz.delivery/" target="_blank" rel="noopener noreferrer" data-close>Cardápio</a>
       <a href="#destaques" data-close>Destaques</a>
       <a href="#sobre" data-close>Sobre</a>
       <a href="#localizacao" data-close>Localização</a>
@@ -153,7 +184,7 @@
           <div class="hero__actions">
             <a class="btn btn--solid js-elastico" id="waHeroBtn" href="https://tomatellipizzaria.wabiz.delivery/" target="_blank"
               rel="noopener noreferrer">Montar pedido</a>
-            <a class="btn btn--ghost" href="#cardapio">Ver cardápio</a>
+            <a class="btn btn--ghost" href="https://tomatellipizzaria.wabiz.delivery/" target="_blank" rel="noopener noreferrer">Ver cardápio</a>
           </div>
           <ul class="hero__meta">
             <li><svg>
@@ -216,7 +247,7 @@
             <h3>Pizza Trem</h3>
             <p>Quase um metro de comprimento e até quatro sabores na mesma pizza. A escolha ideal para reunir a família e os amigos.</p>
             <div class="showcase-v2__chips"><span>Quase 1 metro</span><span>Até 4 sabores</span></div>
-            <a class="showcase-v2__button" href="#cardapio">Ver cardápio <span aria-hidden="true">↗</span></a>
+            <a class="showcase-v2__button" href="https://tomatellipizzaria.wabiz.delivery/" target="_blank" rel="noopener noreferrer">Ver cardápio <span aria-hidden="true">↗</span></a>
           </div>
         </article>
         <article class="showcase-v2__feature showcase-v2__feature--twelve">
@@ -225,7 +256,7 @@
             <h3>Pizza de 12 fatias</h3>
             <p>Uma pizza generosa para compartilhar. Confira os sabores disponíveis no nosso cardápio.</p>
             <div class="showcase-v2__chips"><span>12 fatias</span><span>Para toda a turma</span></div>
-            <a class="showcase-v2__button" href="#cardapio">Explorar sabores <span aria-hidden="true">↗</span></a>
+            <a class="showcase-v2__button" href="https://tomatellipizzaria.wabiz.delivery/" target="_blank" rel="noopener noreferrer">Explorar sabores <span aria-hidden="true">↗</span></a>
           </div>
           <div class="showcase-v2__gallery showcase-v2__gallery--twelve" aria-label="Três fotos das pizzas de 12 fatias">
             <figure><img src="assets/pizza-12-fatias-1.webp" alt="Pizza redonda de sabores variados sobre cesta de vime" loading="lazy" decoding="async"></figure>
@@ -242,28 +273,9 @@
             <h3>Pizza de 10 fatias</h3>
             <p>Uma pizza generosa para compartilhar. Confira os sabores e as opções disponíveis no nosso cardápio.</p>
             <div class="showcase-v2__chips"><span>10 fatias</span><span>Para compartilhar</span></div>
-            <a class="showcase-v2__button" href="#cardapio">Ver cardápio <span aria-hidden="true">↗</span></a>
+            <a class="showcase-v2__button" href="https://tomatellipizzaria.wabiz.delivery/" target="_blank" rel="noopener noreferrer">Ver cardápio <span aria-hidden="true">↗</span></a>
           </div>
         </article>
-      </div>
-    </section>
-
-    <!-- CARDÁPIO -->
-    <section class="section section--soft" id="cardapio">
-      <div class="container">
-        <div class="section-head">
-          <h2>Cardápio</h2>
-          <p>Cardápio do delivery da unidade Umuarama, atualizado em 31/10/2026. Preços e disponibilidade podem mudar; confirme no pedido.</p>
-        </div>
-
-        <div class="menu-controls">
-          <div class="menu-tabs" id="menuTabs" role="tablist" aria-label="Categorias do cardápio"></div>
-          <input class="menu-search" id="menuSearch" type="search" inputmode="search"
-            placeholder="Buscar sabor ou produto" aria-label="Buscar sabor ou produto no cardápio">
-        </div>
-        <div class="menu-panels" id="menuPanels">
-          <p class="menu-loading">Carregando cardápio…</p>
-        </div>
       </div>
     </section>
 
@@ -461,7 +473,7 @@
       <div>
         <h5>Navegação</h5>
         <div class="footer__links">
-          <a href="#cardapio">Cardápio</a>
+          <a href="https://tomatellipizzaria.wabiz.delivery/" target="_blank" rel="noopener noreferrer">Cardápio</a>
           <a href="#destaques">Destaques</a>
           <a href="#sobre">Sobre</a>
           <a href="#localizacao">Localização</a>
@@ -480,11 +492,10 @@
     </div>
     <div class="container footer__bottom">
       <span>© <span id="year"></span> Tomatelli Pizzaria — Itanhaém, SP</span>
-      <span>Cardápio e preços de referência; confirme os valores atualizados ao pedir.</span>
+      <span>Confira sabores, preços e disponibilidade diretamente no aplicativo.</span>
     </div>
   </footer>
 
-  <script src="js/cardapio-data.js" defer></script>
   <script src="js/script.js" defer></script>
   <script src="js/cursor.js" defer></script>
   <script src="js/preencher.js" defer></script>
