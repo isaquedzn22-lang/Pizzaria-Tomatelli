@@ -485,6 +485,11 @@ p {
   font-size: .94rem
 }
 
+.digital-menu__action {
+  display: inline-flex;
+  margin-top: 1.25rem;
+}
+
 .destaques__grid {
   display: grid;
   gap: 1rem
