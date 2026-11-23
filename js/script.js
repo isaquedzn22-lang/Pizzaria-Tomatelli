@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
   closeNavBtn?.addEventListener('click', closeNav);
   mobileNav?.querySelectorAll('[data-close]').forEach(link => link.addEventListener('click', closeNav));
 
-  const orderUrl = 'https://tomatellipizzaria.wabiz.delivery/';
+  const orderUrl = 'pedido.html';
   ['waHeaderBtn', 'waMobileBtn', 'waHeroBtn', 'waUnit1Btn', 'waUnit2Btn'].forEach(id => {
     const link = document.getElementById(id);
     if (link) link.href = orderUrl;

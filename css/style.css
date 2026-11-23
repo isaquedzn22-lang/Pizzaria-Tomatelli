@@ -490,6 +490,35 @@ p {
   margin-top: 1.25rem;
 }
 
+.digital-menu__options {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+.digital-menu__option {
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 18px 50px rgba(72, 42, 24, .06);
+}
+
+.digital-menu__option h3 {
+  font-size: 1.65rem;
+}
+
+.digital-menu__option p {
+  margin-top: .45rem;
+}
+
+@media (min-width: 760px) {
+  .digital-menu__options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 .destaques__grid {
   display: grid;
   gap: 1rem
@@ -2248,4 +2277,77 @@ html.has-cursor * {
 @media (max-width: 767px) {
  .showcase-v2__feature--ten { min-width: 0; }
  .showcase-v2__gallery--ten img { max-height: none; width: 100%; height: auto; }
+}
+
+/* Página intermediária de escolha da unidade */
+.order-page {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #fff6e8 0, #f7eee2 45%, #eadbca 100%);
+}
+
+.order-page__main {
+  width: min(100%, 1000px);
+  min-height: 100vh;
+  margin: auto;
+  padding: clamp(2rem, 5vw, 5rem) 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.order-page__brand {
+  align-self: center;
+  width: 150px;
+  margin-bottom: clamp(2rem, 5vw, 4rem);
+}
+
+.order-page__brand img { width: 100%; height: auto; }
+
+.order-page__panel {
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border: 1px solid var(--glass-line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.order-page__panel h1 {
+  margin-top: .45rem;
+  font-size: clamp(2.5rem, 6vw, 4.3rem);
+}
+
+.order-page__panel > p { max-width: 47ch; margin: .9rem auto 0; }
+
+.order-page__options {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.order-page__option {
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) - 4px);
+  background: var(--surface-strong);
+}
+
+.order-page__option h2 { font-size: 2rem; }
+.order-page__option p { margin-top: .4rem; }
+.order-page__option .btn { margin-top: 1.25rem; }
+
+.order-page__back {
+  display: inline-block;
+  margin-top: 1.5rem;
+  color: var(--tomato-dark);
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+
+@media (min-width: 760px) {
+  .order-page__options { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .order-page__option { min-height: 230px; display: flex; flex-direction: column; align-items: flex-start; }
+  .order-page__option .btn { margin-top: auto; }
 }
